@@ -1,2 +1,18 @@
-# EcoTech-Hack-A-Thon
-An AI-driven system that tackles the core facets of environmental conservation. The system is designed with the advanced capability to continuously monitor and comprehensively analyze a wide range of environmental data , and propagate sustainable behaviors
+# EcoTech Hack-A-Thon Project🚀
+
+## ECHO ECHO :
+
+> [!NOTE]
+> Information the user should notice even if skimming.
+
+> [!TIP]
+> Optional information to help a user be more successful.
+
+> [!IMPORTANT]
+> Essential information required for user success.
+
+> [!CAUTION]
+> Negative potential consequences of an action.
+
+> [!WARNING]
+> Dangerous certain consequences of an action.
