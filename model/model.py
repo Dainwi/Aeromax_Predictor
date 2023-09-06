@@ -73,14 +73,15 @@ class ECHO_ECHO:
         self.x_test = np.array(self.x_test)
         self.x_test = np.reshape(self.x_test, (self.x_test.shape[0], self.x_test.shape[1], 1))
         predictions = self.model.predict(self.x_test)
-        predictions = self.scaler.inverse_transform(predictions)  
+        predictions = self.scaler.inverse_transform(predictions)
         
         return predictions
     
     def show_predicted_graph(self,prediction):
-        rmse = np.sqrt(np.mean(prediction-self.y_test)**2)
-        train = self.dataframe[:self.training_data_len]
-        validate = self.dataframe[self.training_data_len:]
+        # prediction = prediction.reshape(-1,1)
+        rmse = np.sqrt(np.mean((prediction-self.y_test)**2))
+        train = self.dataframe_date[:self.training_data_len]
+        validate = self.dataframe_date[self.training_data_len:]
         validate['Predictions'] = prediction
         
         plt.title("Model for PM2.5")
@@ -96,7 +97,7 @@ class ECHO_ECHO:
 if __name__=='__main__':
     
     dataset = 'model/dataset/air-quality-india.csv'
-    saved_model = 'ECHO_ECHO.h5'
+    saved_model = 'model/saved_model/echo_echo.h5'
     
     echo_echo = ECHO_ECHO(dataset,saved_model)
     echo_echo.visualize(show_plot=False)
@@ -104,4 +105,5 @@ if __name__=='__main__':
     echo_echo.build_model()
     echo_echo.train_or_load_model()
     prediction = echo_echo.make_prediction(num=60)
+    # print(prediction)
     echo_echo.show_predicted_graph(prediction=prediction)
