@@ -2,7 +2,7 @@
 
 ## ECHO ECHO :
 
-> [!NOTE]
+> [!DESCRIPTION]
 > Information the user should notice even if skimming.
 
 > [!TIP]
