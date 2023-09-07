@@ -14,7 +14,6 @@ class ECHO_ECHO:
         self.dataframe = pd.read_csv(self.dataset_path)
         self.sc = MinMaxScaler(feature_range=(0,1))
         
-        
     def data_preprocessing(self):
         self.dataframe["Timestamp"] = pd.to_datetime(self.dataframe["Timestamp"])
         self.dataframe['Date'] = self.dataframe["Timestamp"].dt.date
@@ -74,6 +73,13 @@ class ECHO_ECHO:
         self.predictions = self.model.predict(self.X_test)
         self.predictions = self.sc.inverse_transform(self.predictions)
         
+    
+    def preprare_prediction_data(self):
+        self.train = self.new_dataframe_date[:self.training_data_len]
+        self.valid = self.new_dataframe_date[self.training_data_len:]
+        self.valid['Predictions'] = self.predictions
+        
+        return self.train, self.valid
     
     def visualize_prediction(self,save_graph=False):
         self.train = self.new_dataframe_date[:self.training_data_len]
