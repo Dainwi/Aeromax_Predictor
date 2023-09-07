@@ -3,20 +3,23 @@
 *{
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
     overflow: hidden;
     font-family: 'Poppins', sans-seri
 }
 
 body{
-    background: #353441ff;
+    background: #15151eff;
 }
 
 .sidebar{
     width: 20vw;
-    height: 100%;
-    background: #202123ff;
+    height: 100vh;
+    background: #282931ff;
     display: block;
+    color:#c1c0c7ff;
+}
+.sidebar h3{
+    padding: 20px;
 }
 
 .main{
@@ -27,4 +30,52 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.upload_form{
+    width: 60%;
+    height: 25vh;
+    padding: 20px;
+    border: 1px solid rgba(193, 192, 199, 0.249);
+    border-radius: .3em;
+}
+
+.upload_form label{
+    display: inline-block;
+    width: 100%;
+    color:#c1c0c7ff;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+.upload_form input{
+    background: rgb(22, 23, 26);
+    border-radius: .3em;
+    padding: 3px;
+    color: #c1c0c7ff;
+    border: 1px solid rgba(193, 192, 199, 0.249);
+    width:60%;
+    margin: 10px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.upload_form input:hover{
+    border: 1px solid orange;
+    outline: 1px solid whitesmoke;
+}
+
+.upload_form button{
+    background: #8987feff;
+    border-radius: .3em;
+    border: 0;
+    outline: 0;
+    width: 145px;
+    padding: 5px;
+    margin: 20px auto;
+    display: block;
+}
+
+.upload_form button:focus{
+    transform: translateY(3px);
 }

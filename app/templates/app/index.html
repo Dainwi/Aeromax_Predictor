@@ -9,9 +9,15 @@
   </head>
   <body>
     <!-- app/templates/app/upload.html -->
-    <form method="post" enctype="multipart/form-data">
-      {% csrf_token %} {{ form.as_p }}
-      <button type="submit">Upload CSV</button>
-    </form>
+    <div class="main">
+      <form method="post" enctype="multipart/form-data" class="upload_form">
+        {% csrf_token %} {{ form.as_p }}
+        <button type="submit">Upload CSV</button>
+      </form>
+    </div>
+
+    <div class="sidebar">
+      <h3 id="title">Aeromax Predictor</h3>
+    </div>
   </body>
 </html>
