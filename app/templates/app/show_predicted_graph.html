@@ -3,12 +3,24 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Predicted Graph</title>
     {% load static %}
-    <link rel="stylesheet" href="{% static 'style.css' %}" />
+    <link rel="stylesheet" href="{% static 'styles.css' %}" />
+    <title>Predicted Graph</title>
+    <style>
+      .result {
+        text-align: center;
+      }
+      #graph {
+        width: 100%;
+        height: 70%;
+      }
+    </style>
   </head>
   <body>
     <!-- myapp/templates/result.html -->
+    <div class="result">
+      <h3>Predicted Graph</h3>
     <img src="data:image/png;base64,{{ image_data }}" alt="Graph" id="graph" />
+    </div>
   </body>
 </html>
