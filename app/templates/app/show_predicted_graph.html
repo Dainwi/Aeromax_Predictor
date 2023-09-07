@@ -3,15 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Aeromax Predictor - Home</title>
+    <title>Predicted Graph</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'style.css' %}" />
   </head>
   <body>
-    <!-- app/templates/app/upload.html -->
-    <form method="post" enctype="multipart/form-data">
-      {% csrf_token %} {{ form.as_p }}
-      <button type="submit">Upload CSV</button>
-    </form>
+    <!-- myapp/templates/result.html -->
+    <img src="data:image/png;base64,{{ image_data }}" alt="Graph" />
   </body>
 </html>

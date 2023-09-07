@@ -1,16 +1,16 @@
-from model.model import ECHO_ECHO
+# from model.model import AeroMax
 
-echo_echo = ECHO_ECHO(
-    dataset_path='dataset/air-quality-india.csv',
-    model_path='saved_model/echo_echo.h5'
-)
+# aeromax = AeroMax(
+#     dataset_path='dataset/air-quality-india.csv',
+#     model_path='saved_model/aeromax_predictor_model.h5'
+# )
 
-if __name__ == "__main__":
+# if __name__ == "__main__":
     
-    echo_echo.data_preprocessing()
-    echo_echo.visualize_for_exsisting(show_graph=False)
-    echo_echo.prepare_training_data()
-    echo_echo.train_or_load_model()
-    echo_echo.prepare_testing_data()
-    echo_echo.make_prediction()
-    echo_echo.visualize_prediction()
+#     aeromax.data_preprocessing()
+#     aeromax.visualize_for_exsisting(show_graph=False)
+#     aeromax.prepare_training_data()
+#     aeromax.train_or_load_model()
+#     aeromax.prepare_testing_data()
+#     aeromax.make_prediction()
+#     aeromax.visualize_prediction()

@@ -1,30 +1,31 @@
 # myapp/views.py
-from django.shortcuts import render
-from .forms import UploadFileForm
-import pandas as pd
-import matplotlib.pyplot as plt
 from io import BytesIO
+from model.model import AeroMax
+import matplotlib.pyplot as plt
+from .forms import UploadFileForm
+from django.shortcuts import render
 import base64
-from model.model import ECHO_ECHO  # Import your model class
+
+params = [
+    'dataset/air-quality-india.csv',
+    'saved_model/aeromax_predictor_model.h5'
+]
+
+aeromax = AeroMax(params[0],params[1])
+aeromax.data_preprocessing()  
+aeromax.visualize_for_exsisting(show_graph=False)
+aeromax.prepare_training_data()
+aeromax.train_or_load_model()
+aeromax.prepare_testing_data()
+aeromax.make_prediction()
 
 def upload_file(request):
+    
     if request.method == 'POST':
         form = UploadFileForm(request.POST, request.FILES)
         if form.is_valid():
-            uploaded_file = form.save()
-            data = pd.read_csv(uploaded_file.csv_file)
-
-
-            model = ECHO_ECHO('dataset/air-quality-india.csv', 'saved_model/echo_echo.h5')
-            model.data_preprocessing()  
-            model.visualize_for_exsisting(show_graph=False)
-            model.prepare_training_data()
-            model.train_or_load_model()
-            model.prepare_testing_data()
-            model.make_prediction()
-            train , valid = model.preprare_prediction_data()
-            
-            plt.figure(figsize=(16,8))
+            train , valid = aeromax.preprare_prediction_data()
+            plt.figure(figsize=(25,8))
             plt.title('Model')
             plt.xlabel('Date', fontsize=8)
             plt.ylabel('PM2.5', fontsize=8)
@@ -38,7 +39,7 @@ def upload_file(request):
             buffer.seek(0)
             image_data = buffer.getvalue()
             image_base64 = base64.b64encode(image_data).decode('utf-8')
-            return render(request, 'app/index.html', {'image_data': image_base64})
+            return render(request, 'app/show_predicted_graph.html', {'image_data': image_base64})
     else:
         form = UploadFileForm()
-    return render(request, 'app/upload.html', {'form': form})
+    return render(request, 'app/index.html', {'form': form})

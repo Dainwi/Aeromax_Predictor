@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&family=Poppins:wght@300&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+    font-family: 'Poppins', sans-seri
+}
+
+body{
+    background: #353441ff;
+}
+
+.sidebar{
+    width: 20vw;
+    height: 100%;
+    background: #202123ff;
+    display: block;
+}
+
+.main{
+    width: 80vw;
+    height: 100%;
+    position: absolute;
+    left: 20vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

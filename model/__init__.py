@@ -1,1 +1,1 @@
-from .model import ECHO_ECHO
+from .model import AeroMax

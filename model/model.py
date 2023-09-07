@@ -6,7 +6,7 @@ from sklearn.preprocessing import MinMaxScaler
 from keras.models import Sequential , load_model
 from keras.layers import Dense, LSTM
 
-class ECHO_ECHO:
+class AeroMax:
     
     def __init__(self,dataset_path,model_path):
         self.dataset_path = dataset_path
@@ -50,7 +50,7 @@ class ECHO_ECHO:
         
     def train_model(self):
         self.model.compile(optimizer='adam',loss='mean_squared_error')
-        self.model.fit(self.X_train,self.y_train,batch_size=1,epochs=1)
+        self.model.fit(self.X_train,self.y_train,batch_size=8,epochs=50)
         self.model.save(self.model_path)
     
     def train_or_load_model(self):

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aeromax Predictor - HomePage</title>
+
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <!-- app/templates/app/upload.html -->
+    <div class="main">
+      <form method="post" enctype="multipart/form-data">
+        <input
+        type="hidden"
+        name="csrfmiddlewaretoken"
+        value="W9xiY5ENTvnIZCyEKzcIlnfBcY3qhAKALvzyJsrPGZayasyRK7CZb3ikHl26zfYX"
+        />
+        <p>
+          <label for="id_csv_file">Csv file:</label>
+          <input type="file" name="csv_file" required id="id_csv_file" />
+        </p>
+        <button type="submit">Upload CSV</button>
+      </form>
+    </div>
+    <div class="sidebar">
+        <h3 id="title">Aeromax Predictor</h3>
+    </div>
+  </body>
+</html>
