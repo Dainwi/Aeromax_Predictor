@@ -19,13 +19,15 @@ body {
     color: #c1c0c7ff;
 }
 
-.sidebar h3{
+.sidebar h3 {
     padding: 20px;
 }
-.sidebar h4{
+
+.sidebar h4 {
     padding: 20px;
 }
-.sidebar p{
+
+.sidebar p {
     font-size: 12px;
     padding: 20px;
 }
