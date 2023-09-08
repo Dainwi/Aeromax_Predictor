@@ -5,7 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     {% load static %}
     <link rel="stylesheet" href="{% static 'styles.css' %}" />
-    <title>Aeromax Predictor - Home</title>
+    <title>Aeromax Predictor</title>
+    <style>
+      @media screen and (max-width: 600px) {
+        .upload_form{
+          width:75%;
+        }
+        .main{
+          width: 100vw;
+          left: 0;
+        }
+        .sidebar {
+          width: 0;
+          margin: 0;
+          diplay: none;
+        }
+        .upload_form input {
+          width: 94%;
+        }
+      }
+    </style>
   </head>
   <body>
     <!-- app/templates/app/upload.html -->

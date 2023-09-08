@@ -19,10 +19,12 @@ body {
     color: #c1c0c7ff;
 }
 
-.sidebar h3 ,h4{
+.sidebar h3{
     padding: 20px;
 }
-
+.sidebar h4{
+    padding: 20px;
+}
 .sidebar p{
     font-size: 12px;
     padding: 20px;
@@ -113,7 +115,7 @@ body {
     margin-top: 10px;
 }
 
-@media screen and (min-width: 440px) {
+@media screen and (max-width: 440px) {
     .sidebar {
         display: none;
     }
