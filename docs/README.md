@@ -12,6 +12,7 @@
 - [Benifits](###Benifits)
 - [Future Scope](###Future-Scope)
 - [Team Members](###Team-Members)
+- [Deployment](###Deployment)
 
 
 ### Introduction
