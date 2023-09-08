@@ -11,7 +11,7 @@
 - [Usage](###Usage)
 - [Benifits](###Benifits)
 - [Future Scope](###Future-Scope)
-- [Contributors](###Contributors)
+- [Team Members](###Team-Members)
 
 
 ### Introduction
@@ -25,7 +25,7 @@ Here are some screenshots of the project. The first one is the homepage of the w
 |:---:|:---:|
 |![home page](./screenshots/aeromax_predictor_ss1.png)|![result page](./screenshots/aeromax_predictor_ss2.png)|
 
-### Repository Structure
+### Repository-Structure
 This is how the repository is structured. The repository contains the dataset, model, webapp, notebook, saved_model, media, docs and the manage.py file.
 
 
@@ -65,3 +65,58 @@ This is how the repository is structured. The repository contains the dataset, m
 │   ├───.gitignore
 │   ├───manage.py
 ```
+### Requirements
+To install all the requirements run the following command in your terminal.
+```bash
+pip install -r requirements.txt
+```
+### Installation
+To install the project in your local machine run the following command in your terminal.
+
+- [ ] Clone and Install all the requirements :
+```bash
+    git clone https://github.com/vivek09thakur/Aeromax_Predictor.git
+    pip install -r requirements.txt
+```
+- [ ] Change the directory :
+```bash
+    cd Aeromax_Predictor
+```
+- [ ] Make migrations :
+```bash
+    python manage.py makemigrations
+    python manage.py migrate
+```
+- [ ] Run the server :
+```bash
+    python manage.py runserver
+```
+### Usage
+
+**Using the web app**
+- [ ] Open the browser and go to the following url : **`http://Areomax.render.com**
+- [ ] Upload the csv file and click on upload button.
+- [ ] The predicted graph will be shown in the result page.
+
+**Using the model**
+- [ ] Open the notebook and run all the cells.
+- [ ] The model will be trained and saved in the saved_model folder.
+- [ ] You can use the model by loading the model.h5 file.
+
+### Benifits
+- The model can predict the air quality index of the next year.
+- It can be used to predict the air quality index of any city of India.
+- It can be used to predict the air quality index of any country by training the model on the dataset of that country.
+- Government of india can take action according to the predicted graph to reduce the air pollution.
+
+### Future Scope
+
+- [ ] The model can be trained on the dataset of any country to predict the air quality index of that country.
+- [ ] We can add more features to the web app to make it more user friendly.
+- [ ] We can implement the model in real life to predict the air quality index of any city of India.
+- [ ] We can use a language model to advice the government to take action according to the predicted graph to reduce the air pollution.
+
+### Team-Members
+- [Vivek Thakur](https://github.com/vivek09thakur)
+- [Dainwi Choudhary](https://github.com/dainwi)
+- [Subhashree Pandey](#)
