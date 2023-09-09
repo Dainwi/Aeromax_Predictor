@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-rr-25-+p_uin7(!6**1$)2%e^oetz6lb!blu39-ub)h)a#6m=w
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['aeromax-predictor.onrender.com']
 
 
 # Application definition
