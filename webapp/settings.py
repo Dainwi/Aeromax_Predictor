@@ -82,20 +82,20 @@ WSGI_APPLICATION = 'webapp.wsgi.application'
 #         'NAME': BASE_DIR / 'db.sqlite3',
 #     }
 # }
-# DATABASES = {
-# 	"default": dj_database_url.parse(os.environ.get("DATABASE_URL"))
-# }
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'URL': 'postgres://areomax_predictor_database_user:Q0vZRppvjpqnp1vFHKI0BZxNzeE2zSz6@dpg-cjtf8e7hdsdc73aaoqo0-a.oregon-postgres.render.com/areomax_predictor_database',
-        'NAME': 'areomax_predictor_database',
-        'USER': 'areomax_predictor_database_user',
-        'PASSWORD': 'Q0vZRppvjpqnp1vFHKI0BZxNzeE2zSz6',
-        'HOST': 'dpg-cjtf8e7hdsdc73aaoqo0-a',
-        'PORT': 5432,
-    }
+	"default": dj_database_url.parse(os.environ.get("DATABASE_URL"))
 }
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'URL': 'postgres://areomax_predictor_database_user:Q0vZRppvjpqnp1vFHKI0BZxNzeE2zSz6@dpg-cjtf8e7hdsdc73aaoqo0-a.oregon-postgres.render.com/areomax_predictor_database',
+#         'NAME': 'areomax_predictor_database',
+#         'USER': 'areomax_predictor_database_user',
+#         'PASSWORD': 'Q0vZRppvjpqnp1vFHKI0BZxNzeE2zSz6',
+#         'HOST': 'dpg-cjtf8e7hdsdc73aaoqo0-a',
+#         'PORT': 5432,
+#     }
+# }
 
 
 # Password validation
