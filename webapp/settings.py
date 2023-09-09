@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 
 from pathlib import Path
 import os
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -75,10 +76,24 @@ WSGI_APPLICATION = 'webapp.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+# DATABASES = {
+# 	"default": dj_database_url.parse(os.environ.get("DATABASE_URL"))
+# }
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'URL': 'postgres://areomax_predictor_database_user:Q0vZRppvjpqnp1vFHKI0BZxNzeE2zSz6@dpg-cjtf8e7hdsdc73aaoqo0-a.oregon-postgres.render.com/areomax_predictor_database',
+        'NAME': 'areomax_predictor_database',
+        'USER': 'areomax_predictor_database_user',
+        'PASSWORD': 'Q0vZRppvjpqnp1vFHKI0BZxNzeE2zSz6',
+        'HOST': 'dpg-cjtf8e7hdsdc73aaoqo0-a',
+        'PORT': 5432,
     }
 }
 
@@ -123,6 +138,11 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+STATICFILES_DIR = [
+    os.path.join(BASE_DIR,'static')
+]
+STATIC_ROOT = os.path.join(BASE_DIR,'static')
+
 # settings.py
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
