@@ -6,48 +6,39 @@
     {% load static %}
     <link rel="stylesheet" href="{% static 'styles.css' %}" />
     <title>Aeromax Predictor</title>
-    <style>
-      @media screen and (max-width: 600px) {
-        .upload_form {
-          width: 75%;
-        }
-        .main {
-          width: 100vw;
-          left: 0;
-        }
-        .sidebar {
-          width: 0;
-          margin: 0;
-          diplay: none;
-        }
-        .upload_form input {
-          width: 94%;
-        }
-      }
-    </style>
   </head>
   <body>
     <!-- app/templates/app/upload.html -->
-    <div class="main">
-      <form method="post" enctype="multipart/form-data" class="upload_form">
-        {% csrf_token %} {{ form.as_p }}
-        <button type="submit">Upload CSV</button>
-      </form>
+    <div class="container">
+      <h1>Aeromax Predictor</h1>
+      <p>Hi! I'm Aeromax, your air quality predictor. I can help you forecast the air quality for the next year based on
+        the historical data.</p>
+      <p>All you need to do is upload a CSV file that has the air quality data of the previous 5 years. Then, press the
+        Generate Report button to see the projected air quality in India.</p>
+    
+    
+      <!-- Label for the file input -->
+      <label for="fileInput" id="fileName" class="file-name">
+        Choose
+      </label>
+    
+      <!-- Actual file input element, visually hidden -->
+      <input type="file" id="fileInput">
+      {% csrf_token %} {{ form.as_p }}
+    
+      <!-- Generate Report button -->
+      <button>Generate Report</button>
     </div>
+    
+    <!-- JavaScript to update the selected file name -->
+    <script>
+      const fileInput = document.getElementById('fileInput');
+      const fileNameDisplay = document.querySelector('.file-name');
 
-    <div class="sidebar">
-      <h3 id="title">Aeromax Predictor</h3>
-      <p>
-        Hey there! Welcome to Aeromax Predictor. This is a web app intended to
-        an AI model which is trained on India's air quality data to predict the
-        air quality for the next year.
-      </p>
+      fileInput.addEventListener('change', () => {
+        fileNameDisplay.textContent = fileInput.files[0] ? fileInput.files[0].name : 'No file selected';
+      });
 
-      <h4>How to use?</h4>
-      <p>
-        Upload a CSV file containing the air quality data for the past 5 years
-        and the model will predict the air quality for the next year.
-      </p>
-    </div>
+    </script>
   </body>
 </html>
